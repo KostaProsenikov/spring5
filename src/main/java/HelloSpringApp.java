@@ -11,7 +11,10 @@ public class HelloSpringApp {
         Coach trackCoach = ctx.getBean("trackCoach", Coach.class);
 //        call methods on the bean
         System.out.println(theCoach.getDailyWorkout());
+        System.out.println(theCoach.getDailyFortune());
+
         System.out.println(trackCoach.getDailyWorkout());
+        System.out.println(trackCoach.getDailyFortune());
 //        close the context
         ctx.close();
     }
