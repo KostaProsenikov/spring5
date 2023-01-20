@@ -6,5 +6,7 @@ public interface Coach {
         return "Spend 60 minutes outside!";
     }
 
+    String getTeamName();
+
     String getDailyFortune();
 }

@@ -18,8 +18,18 @@
 
     <bean id="trackCoach" class="com.java.springdemo.TrackCoach">
         <constructor-arg ref="myFortune"/>
+        <property name="email" value="ivan.ivanov@gmail.com"/>
+        <property name="team" value="Man City"/>
+        <property name="coachName" value="Ivan Ivanov"/>
     </bean>
 
+    <bean id="footballCoach" class="com.java.springdemo.FootballCoach">
+        <!--        set up setter injection -->
+        <property name="fortuneService" ref="myFortune"/>
+        <property name="email" value="testemail@gmail.com"/>
+        <property name="team" value="Man Utd."/>
+        <property name="coachName" value="Greg Navalsky"/>
+    </bean>
 
 </beans>
 
