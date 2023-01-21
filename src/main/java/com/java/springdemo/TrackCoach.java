@@ -37,7 +37,12 @@ public class TrackCoach implements Coach {
 
     @Override
     public String getDailyWorkout() {
-        return "Run 5k steps daily with team: " + getCoachName();
+        return "Run 5k steps daily with team: " + getTeamName();
+    }
+
+    @Override
+    public String getCoachFitInstructions() {
+        return "Your coach is: " + getCoachName();
     }
 
     @Override

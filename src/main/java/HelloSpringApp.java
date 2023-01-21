@@ -15,10 +15,12 @@ public class HelloSpringApp {
 //        Base coach class
         System.out.println(theCoach.getDailyWorkout());
         System.out.println(theCoach.getDailyFortune());
+        System.out.println(theCoach.getCoachFitInstructions());
 
 //        Track coach class
         System.out.println(trackCoach.getDailyWorkout());
         System.out.println(trackCoach.getDailyFortune());
+        System.out.println(trackCoach.getCoachFitInstructions());
 
 //        Football coach class
         System.out.println(footballCoach.getDailyWorkout());

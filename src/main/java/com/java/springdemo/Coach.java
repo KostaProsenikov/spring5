@@ -8,5 +8,7 @@ public interface Coach {
 
     String getTeamName();
 
+    String getCoachFitInstructions();
+
     String getDailyFortune();
 }

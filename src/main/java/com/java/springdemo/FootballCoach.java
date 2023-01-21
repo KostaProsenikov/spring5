@@ -10,6 +10,11 @@ public class FootballCoach implements Coach {
     public FootballCoach() {
     }
 
+    @Override
+    public String getCoachFitInstructions() {
+        return "Football coach is: " + getCoachName();
+    }
+
     public String getCoachName() {
         return coachName;
     }

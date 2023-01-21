@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans.xsd">
+    http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:sport.properties"/>
     <!-- Define your beans here -->
 
     <!--    define bean for dependency -->
@@ -12,23 +13,24 @@
     </bean>
 
     <bean id="myCoach" class="com.java.springdemo.BaseballCoach">
-        <!--        set up constructor injection -->
+        <!--  set up constructor injection -->
         <constructor-arg ref="myFortune"/>
+        <property name="coachName" value="${coach1.coachName}"/>
     </bean>
 
     <bean id="trackCoach" class="com.java.springdemo.TrackCoach">
         <constructor-arg ref="myFortune"/>
-        <property name="email" value="ivan.ivanov@gmail.com"/>
-        <property name="team" value="Man City"/>
-        <property name="coachName" value="Ivan Ivanov"/>
+        <property name="email" value="${coach1.email}"/>
+        <property name="team" value="${coach1.team}"/>
+        <property name="coachName" value="${coach1.coachName}"/>
     </bean>
 
     <bean id="footballCoach" class="com.java.springdemo.FootballCoach">
         <!--        set up setter injection -->
         <property name="fortuneService" ref="myFortune"/>
-        <property name="email" value="testemail@gmail.com"/>
-        <property name="team" value="Man Utd."/>
-        <property name="coachName" value="Greg Navalsky"/>
+        <property name="email" value="${coach2.email}"/>
+        <property name="team" value="${coach2.team}"/>
+        <property name="coachName" value="${coach2.coachName}"/>
     </bean>
 
 </beans>
