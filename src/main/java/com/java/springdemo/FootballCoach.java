@@ -1,5 +1,8 @@
 package com.java.springdemo;
 
+import org.springframework.stereotype.Component;
+
+@Component("FootballCoachComponent")
 public class FootballCoach implements Coach {
 
     private FortuneService fortuneService;

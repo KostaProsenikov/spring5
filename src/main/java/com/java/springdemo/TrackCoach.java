@@ -1,5 +1,8 @@
 package com.java.springdemo;
 
+import org.springframework.stereotype.Component;
+
+@Component("TrackCoachComp")
 public class TrackCoach implements Coach {
 
     private FortuneService fortuneService;
@@ -12,6 +15,14 @@ public class TrackCoach implements Coach {
     }
 
     public TrackCoach() {
+    }
+
+    public void doMyInitialStartStuff() {
+        System.out.println("Track Coach: start up method!");
+    }
+
+    public void doMyDestroyStuff() {
+        System.out.println("Track Coach: bean is destroyed!");
     }
 
     public String getTeam() {

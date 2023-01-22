@@ -7,6 +7,9 @@
     <context:property-placeholder location="classpath:sport.properties"/>
     <!-- Define your beans here -->
 
+    <!-- add entry to enable component scanning -->
+
+    <context:component-scan base-package="com.java.springdemo"/>
     <!--    define bean for dependency -->
 
     <bean id="myFortune" class="com.java.springdemo.HappyFortuneService">
@@ -18,7 +21,10 @@
         <property name="coachName" value="${coach1.coachName}"/>
     </bean>
 
-    <bean id="trackCoach" class="com.java.springdemo.TrackCoach">
+    <!--    New bean is created for each request with prototype scope
+            scope="prototype" -->
+    <bean id="trackCoach" class="com.java.springdemo.TrackCoach"
+          init-method="doMyInitialStartStuff" destroy-method="doMyDestroyStuff">
         <constructor-arg ref="myFortune"/>
         <property name="email" value="${coach1.email}"/>
         <property name="team" value="${coach1.team}"/>

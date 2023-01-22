@@ -3,6 +3,7 @@ package com.java.springdemo;
 public class BaseballCoach implements Coach {
 
     //    define a private field for dependency
+
     private final FortuneService fortuneService;
     private String coachName;
 
