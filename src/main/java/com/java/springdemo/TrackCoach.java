@@ -10,11 +10,8 @@ public class TrackCoach implements Coach {
     private String team;
     private String coachName;
 
-    public TrackCoach(FortuneService fortuneService) {
-        this.fortuneService = fortuneService;
-    }
-
-    public TrackCoach() {
+    public void setOtherMethod(FortuneService theFortuneService) {
+        fortuneService = theFortuneService;
     }
 
     public void doMyInitialStartStuff() {

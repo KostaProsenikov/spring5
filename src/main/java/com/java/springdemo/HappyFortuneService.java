@@ -1,8 +1,11 @@
 package com.java.springdemo;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Random;
 
 
+@Component
 public class HappyFortuneService implements FortuneService {
 
     String[] fortunes = {"здраве", "щастие", "късмет", "пътуване"};

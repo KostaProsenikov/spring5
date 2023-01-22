@@ -1,9 +1,16 @@
 package com.java.springdemo;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class FitnessCoach implements Coach {
+
+    private final FortuneService fortuneService;
+
+    public FitnessCoach(@Qualifier("happyFortuneService") FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
 
     @Override
     public String getDailyWorkout() {
@@ -22,6 +29,6 @@ public class FitnessCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return null;
+        return fortuneService.getFortune();
     }
 }

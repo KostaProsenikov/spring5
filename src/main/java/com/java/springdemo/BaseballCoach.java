@@ -1,14 +1,19 @@
 package com.java.springdemo;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class BaseballCoach implements Coach {
 
     //    define a private field for dependency
 
+    
     private final FortuneService fortuneService;
     private String coachName;
 
     //    define a constructor for dependency injection
-    public BaseballCoach(FortuneService theFortuneService) {
+    public BaseballCoach(@Qualifier("happyFortuneService") FortuneService theFortuneService) {
         fortuneService = theFortuneService;
     }
 
